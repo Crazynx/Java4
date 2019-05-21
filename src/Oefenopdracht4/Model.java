@@ -35,4 +35,8 @@ public class Model {
         this.pcs.firePropertyChange("name", prevGeneratedName, generatedName);
     }
 
+    protected String getName() {
+        return generatedName;
+    }
+
 }
