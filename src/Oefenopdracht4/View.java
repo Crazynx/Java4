@@ -15,7 +15,6 @@ public class View extends BorderPane {
     }
 
     protected void setLabelText(String text) {
-        System.out.println("called setLabelText");
         label.setText(text);
     }
 

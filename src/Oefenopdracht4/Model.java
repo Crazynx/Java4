@@ -25,8 +25,13 @@ public class Model {
 
     protected void generateRandName() {
         String prevGeneratedName = generatedName;
-        generatedName = names[(int) (Math.random() * (4-0))];
-        System.out.println(generatedName);
+        // loop that prevents picking the same name
+        while (true) {
+            generatedName = names[(int) (Math.random() * (4-0))];
+            if (!generatedName.equals(prevGeneratedName)) {
+                break;
+            }
+        }
         this.pcs.firePropertyChange("name", prevGeneratedName, generatedName);
     }
 
