@@ -9,7 +9,6 @@ import javafx.scene.text.Font;
  * View
  * The view is responsible for the non-clickable items on the user interface.
  */
-
 public class View extends BorderPane {
 
     private Label label;
@@ -22,6 +21,18 @@ public class View extends BorderPane {
     }
 
     /*
+     * Method for initializing the 'screen'. It created a new label, sets a font color and size. Also sets the
+     * default text to the label and centers it on the borderpane.
+     */
+    private void initScreen() {
+        label = new Label("Click on the button to generate a name");
+        label.setTextFill(Color.web("#0076a3"));
+        label.setFont(new Font(25));
+//        label.setText("Click on the button to generate a name");
+        this.setCenter(label);
+    }
+
+    /*
      * Method for setting text to label.
      */
     protected void setLabelText(String text) {
@@ -29,16 +40,12 @@ public class View extends BorderPane {
     }
 
     /*
-     * Method for initializing the 'screen'. It created a new label, sets a font color and size. Also sets the
-     * default text to the label and centers it on the borderpane.
+     * Method that retrieves current text on label.
      */
-    private void initScreen() {
-        label = new Label();
-        label.setTextFill(Color.web("#0076a3"));
-        label.setFont(new Font(25));
-        label.setText("Click on the button to generate a name");
-        this.setCenter(label);
+    protected String getLabelText() {
+        return label.getText();
     }
+
 
 
 }
