@@ -6,15 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class ModelTest {
 
     @Test
-    void addPropertyChangeListener() {
-
-    }
-
-    @Test
-    void removePropertyChangeListener() {
-    }
-
-    @Test
     void generateRandName() {
         Model model = new Model();
 
@@ -31,11 +22,8 @@ class ModelTest {
         // Test if generated name isn't equal to previous name:
         model.generateRandName();
         String previousName = model.getName();
+
         model.generateRandName();
         assertNotEquals(previousName, model.getName());
-    }
-
-    @Test
-    void getName() {
     }
 }
