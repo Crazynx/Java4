@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28fe3cf3-8a21-46f5-b8a0-19d779bac2d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Oefenopdracht4/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oefenopdracht4/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Oefenopdracht4/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oefenopdracht4/Runner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Oefenopdracht4/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Oefenopdracht4/View.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,22 +17,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Oefenopdracht4/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Oefenopdracht4/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="252">
+              <caret line="32" column="66" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,8 +75,8 @@
         <option value="$PROJECT_DIR$/test/Model/ModelTest.java" />
         <option value="$PROJECT_DIR$/test/Oefenopdracht4/ModelTest.java" />
         <option value="$PROJECT_DIR$/src/Oefenopdracht4/Runner.java" />
-        <option value="$PROJECT_DIR$/src/Oefenopdracht4/View.java" />
         <option value="$PROJECT_DIR$/src/Oefenopdracht4/Controller.java" />
+        <option value="$PROJECT_DIR$/src/Oefenopdracht4/View.java" />
       </list>
     </option>
   </component>
@@ -279,7 +265,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18522000" />
+    <option name="totallyTimeSpent" value="18793000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -302,7 +288,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32957748" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.10985915" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.34084508" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -406,6 +392,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oefenopdracht4/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-486">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Oefenopdracht4/Model.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
@@ -418,18 +414,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Oefenopdracht4/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oefenopdracht4/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="252">
+          <caret line="32" column="66" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
