@@ -46,8 +46,12 @@ public class Product {
         }
     }
 
-    public void setOmschrijving(String omschrijvijng) {
-        this.omschrijving = omschrijving;
+    public void setOmschrijving(String omschrijving) {
+        if (omschrijving.length() > 0) {
+            this.omschrijving = omschrijving;
+        } else {
+            this.omschrijving = "0";
+        }
     }
 
     public String getOmschrijving() {
