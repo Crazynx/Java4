@@ -108,27 +108,24 @@ class ProductTest {
         assertNotEquals(verwachteUitkomst, product.getPrijsMetBelasting());
     }
 
-//    @Test
-//    void setOmschrijvijng() {
-//        // Positieve test
-//        String omschrijving = "Dit is een omschrijving.";
-//        product.setOmschrijving(omschrijving);
-//        assertEquals(omschrijving, product.getOmschrijving());
-//        // Negatieve test
-//        omschrijving = "9921783898217321";
-//        product.setOmschrijving(omschrijving);
-//        assertNotEquals(omschrijving, product.getOmschrijving());
-//        assertEquals(0, product.getOmschrijving());
-//    }
-//
-//    @Test
-//    void getOmschrijving() {
-//        // Positieve test
-//        String omschrijving = "Dit is een omschrijving.";
-//        product.setOmschrijving(omschrijving);
-//        assertEquals(omschrijving, product.getOmschrijving());
-//    }
+    @Test
+    void setOmschrijvijng() {
+        // Positieve test
+        String omschrijving = "Dit is een omschrijving.";
+        product.setOmschrijving(omschrijving);
+        assertEquals(omschrijving, product.getOmschrijving());
+        // Negatieve test
+        omschrijving = "";
+        product.setOmschrijving(omschrijving);
+        assertNotEquals(omschrijving, product.getOmschrijving());
+        assertEquals("0", product.getOmschrijving());
+    }
 
-
-
+    @Test
+    void getOmschrijving() {
+        // Positieve test
+        String omschrijving = "Dit is een omschrijving.";
+        product.setOmschrijving(omschrijving);
+        assertEquals(omschrijving, product.getOmschrijving());
+    }
 }
