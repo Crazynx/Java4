@@ -20,10 +20,10 @@ public class Model {
     public Model() {
         calculator = new Calculator();
         propertyChangeSupport = new PropertyChangeSupport(this);
-        answerIsGiven = false;
         operatorIsSelected = false;
-        addSeparator = false;
         containsSeparator = false;
+        answerIsGiven = false;
+        addSeparator = false;
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {
@@ -31,39 +31,44 @@ public class Model {
     }
 
     public void setNumber(int number) {
-        if (!operatorIsSelected) {
-            if (addSeparator) {
-                containsSeparator = true;
+        if (!operatorIsSelected) { // first number
+            if (addSeparator) { // if setSeperator has been called
                 firstNumber = Double.parseDouble((int)firstNumber + "." + number);
                 addSeparator = false;
-            } else if (containsSeparator) {
+            } else if (containsSeparator) { // if firstNumber contains a '.'
                 firstNumber = Double.parseDouble(firstNumber + "" + number);
-            } else {
+            } else { // if firstNumber doesn't contain a '.'
                 firstNumber = Double.parseDouble((int)firstNumber + "" + number);
             }
-        } else {
-            if (addSeparator) {
-                secondNumber = Double.parseDouble((int)firstNumber + "." + number);
+        } else { // second number
+            if (addSeparator) { // if setSeperator has been called
+                secondNumber = Double.parseDouble((int)secondNumber + "." + number);
                 addSeparator = false;
-            } else if (containsSeparator) {
-                firstNumber = Double.parseDouble(firstNumber + "" + number);
-            } else {
+            } else if (containsSeparator) { // if secondNumber contains a '.'
+                secondNumber = Double.parseDouble(secondNumber + "" + number);
+            } else { // if secondNumber doesn't contain a '.'
                 containsSeparator = false;
-                secondNumber = Double.parseDouble((int)firstNumber + "" + number);
+                secondNumber = Double.parseDouble((int)secondNumber + "" + number);
             }
         }
     }
 
     public void setSeparator() {
         addSeparator = true;
+        containsSeparator = true;
     }
 
     public void setOperator(char operator) {
         operatorIsSelected = true;
+        containsSeparator = false;
+        addSeparator = false;
         this.operator = operator;
     }
 
     public void setAnswer() {
+        operatorIsSelected = false;
+        containsSeparator = false;
+        addSeparator = false;
         calculate(firstNumber, secondNumber, operator);
     }
 
@@ -102,5 +107,7 @@ public class Model {
         return operator;
     }
 
-
+    public double getAnswer() {
+        return calculator.getAnswer();
+    }
 }
