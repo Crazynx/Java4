@@ -19,23 +19,44 @@ class ModelTest {
 
     @Test
     void setNumber() {
+        // check first number
         model.setNumber(1);
-        model.setNumber(0);
+        assertEquals(1.0, model.getFirstNumber());
+        assertNotEquals(2, model.getFirstNumber());
         model.setSeparator();
-        model.setNumber(5);
-        model.setOperator('x');
         model.setNumber(1);
-        model.setNumber(0);
-        model.setNumber(0);
-        model.setAnswer();
-        System.out.println(model.getAnswer());
+        assertEquals(1.1, model.getFirstNumber());
+        assertNotEquals(11, model.getSecondNumber());
+        // set operator to go to second number
+        model.setOperator('-');
+        // check second number
+        model.setNumber(1);
+        assertEquals(1.0, model.getSecondNumber());
+        assertNotEquals(2, model.getSecondNumber());
+        model.setSeparator();
+        model.setNumber(1);
+        assertEquals(1.1, model.getSecondNumber());
+        assertNotEquals(11, model.getSecondNumber());
     }
 
     @Test
     void setSeparator() {
+        model.setNumber(1);
+        model.setSeparator();
+        model.setNumber(1);
+        // check if number contains separator (dot)
+        assertTrue(String.valueOf(model.getFirstNumber()).indexOf('.') != -1);
     }
 
     @Test
     void setOperator() {
+        model.setOperator('-');
+        assertTrue(model.getOperator() == '-');
+        model.setOperator('+');
+        assertTrue(model.getOperator() == '+');
+        model.setOperator('x');
+        assertTrue(model.getOperator() == 'x');
+        model.setOperator('/');
+        assertTrue(model.getOperator() == '/');
     }
 }
