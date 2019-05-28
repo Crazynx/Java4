@@ -21,7 +21,6 @@ public class Calculator {
     }
 
     public double getAnswer() {
-        previousAnswer = answer;
         return answer;
     }
 }
