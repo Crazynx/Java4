@@ -8,7 +8,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ModelTest {
 
+
     Model model;
+    View view;
 
     @BeforeEach
     void setup() {
@@ -18,12 +20,15 @@ class ModelTest {
     @Test
     void setNumber() {
         model.setNumber(1);
-        model.setNumber(2);
+        model.setNumber(0);
         model.setSeparator();
-        model.setNumber(3);
         model.setNumber(5);
-        assertEquals(12.35, model.getFirstNumber());
-
+        model.setOperator('x');
+        model.setNumber(1);
+        model.setNumber(0);
+        model.setNumber(0);
+        model.setAnswer();
+        System.out.println(model.getAnswer());
     }
 
     @Test
