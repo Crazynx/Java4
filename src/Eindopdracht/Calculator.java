@@ -9,7 +9,7 @@ public class Calculator {
     }
 
     public void subtract(double first, double second) {
-        answer = first + second;
+        answer = first - second;
     }
 
     public void multiply(double first, double second) {
