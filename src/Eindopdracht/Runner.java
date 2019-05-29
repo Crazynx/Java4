@@ -12,7 +12,7 @@ public class Runner extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Scene scene = new Scene(new Controller(), 250, 400);
+        Scene scene = new Scene(new Controller(), 250, 350);
         primaryStage.setTitle("Calculator");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
