@@ -18,20 +18,22 @@ class ModelTest {
     }
 
     @Test
-    void setNumber() {
+    void setNumber() { // test if first and second number get set correctly
         // check first number
         model.setNumber(1);
-        assertEquals(1.0, model.getFirstNumber());
+        assertEquals(1, model.getFirstNumber());
         assertNotEquals(2, model.getFirstNumber());
         model.setSeparator();
         model.setNumber(1);
         assertEquals(1.1, model.getFirstNumber());
         assertNotEquals(11, model.getSecondNumber());
+
         // set operator to go to second number
         model.setOperator('-');
+
         // check second number
         model.setNumber(1);
-        assertEquals(1.0, model.getSecondNumber());
+        assertEquals(1, model.getSecondNumber());
         assertNotEquals(2, model.getSecondNumber());
         model.setSeparator();
         model.setNumber(1);
@@ -40,7 +42,7 @@ class ModelTest {
     }
 
     @Test
-    void setSeparator() {
+    void setSeparator() { // test if separator adds dot to number
         model.setNumber(1);
         model.setSeparator();
         model.setNumber(1);
@@ -49,7 +51,7 @@ class ModelTest {
     }
 
     @Test
-    void setOperator() {
+    void setOperator() { // check if operator gets set
         model.setOperator('-');
         assertTrue(model.getOperator() == '-');
         model.setOperator('+');
