@@ -32,6 +32,7 @@ public class Model {
 
     public void setNumber(int number) {
         if (!operatorIsSelected) { // first number
+            double oldValue = firstNumber;
             if (addSeparator) { // if setSeperator has been called
                 firstNumber = Double.parseDouble((int)firstNumber + "." + number);
                 addSeparator = false;
@@ -40,7 +41,9 @@ public class Model {
             } else { // if firstNumber doesn't contain a '.'
                 firstNumber = Double.parseDouble((int)firstNumber + "" + number);
             }
+            this.propertyChangeSupport.firePropertyChange("number", oldValue, firstNumber);
         } else { // second number
+            double oldValue = secondNumber;
             if (addSeparator) { // if setSeperator has been called
                 secondNumber = Double.parseDouble((int)secondNumber + "." + number);
                 addSeparator = false;
@@ -50,29 +53,35 @@ public class Model {
                 containsSeparator = false;
                 secondNumber = Double.parseDouble((int)secondNumber + "" + number);
             }
+            this.propertyChangeSupport.firePropertyChange("number", oldValue, secondNumber);
         }
     }
 
-    public void setSeparator() {
-        addSeparator = true;
+    public void setSeparator() { // set the decimal point, '.'
         containsSeparator = true;
+        addSeparator = true;
     }
 
-    public void setOperator(char operator) {
+    public void setOperator(char operator) { // set operator and adjust variables
+        char oldValue = this.operator;
+        this.operator = operator;
+        this.propertyChangeSupport.firePropertyChange("operator",
+                String.valueOf(oldValue), String.valueOf(this.operator));
         operatorIsSelected = true;
         containsSeparator = false;
         addSeparator = false;
-        this.operator = operator;
     }
 
-    public void setAnswer() {
+    public void setAnswer() { // calculate answer and reset variables to default value
+        calculate(firstNumber, secondNumber, operator);
+        firstNumber = 0;
+        secondNumber = 0;
         operatorIsSelected = false;
         containsSeparator = false;
         addSeparator = false;
-        calculate(firstNumber, secondNumber, operator);
     }
 
-    public void calculate(double first, double second, char operator) {
+    public void calculate(double first, double second, char operator) { // calculate answer and set new change
         double oldValue = calculator.getAnswer();
         switch (operator) {
             case '-':
@@ -91,7 +100,6 @@ public class Model {
                 calculator.divide(first, second);
                 break;
         }
-
         this.propertyChangeSupport.firePropertyChange("answer", oldValue, calculator.getAnswer());
     }
 
