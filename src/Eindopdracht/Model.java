@@ -31,33 +31,28 @@ public class Model {
     }
 
     public void setNumber(int number) {
-        if (!operatorIsSelected) { // first number
-            double oldValue = firstNumber;
+        double tempNum;
+        if (!operatorIsSelected) {
+            tempNum = firstNumber;
+        } else {
+            tempNum = secondNumber;
+        }
+        double oldValue = tempNum;
             if (addSeparator) { // if setSeperator has been called
-                firstNumber = Double.parseDouble((int)firstNumber + "." + number);
+                tempNum= Double.parseDouble((int)tempNum+ "." + number);
                 addSeparator = false;
-                this.propertyChangeSupport.firePropertyChange("number", oldValue, firstNumber);
+                this.propertyChangeSupport.firePropertyChange("number", oldValue, tempNum);
             } else if (containsSeparator) { // if firstNumber contains a '.'
-                firstNumber = Double.parseDouble(firstNumber + "" + number);
-                this.propertyChangeSupport.firePropertyChange("number", oldValue, firstNumber);
+                tempNum= Double.parseDouble(tempNum+ "" + number);
+                this.propertyChangeSupport.firePropertyChange("number", oldValue, tempNum);
             } else { // if firstNumber doesn't contain a '.'
-                firstNumber = Double.parseDouble((int)firstNumber + "" + number);
-                this.propertyChangeSupport.firePropertyChange("number", oldValue, (int)firstNumber);
+                tempNum= Double.parseDouble((int)tempNum+ "" + number);
+                this.propertyChangeSupport.firePropertyChange("number", oldValue, (int)tempNum);
             }
-        } else { // second number
-            double oldValue = secondNumber;
-            if (addSeparator) { // if setSeperator has been called
-                secondNumber = Double.parseDouble((int)secondNumber + "." + number);
-                addSeparator = false;
-                this.propertyChangeSupport.firePropertyChange("number", oldValue, secondNumber);
-            } else if (containsSeparator) { // if secondNumber contains a '.'
-                secondNumber = Double.parseDouble(secondNumber + "" + number);
-                this.propertyChangeSupport.firePropertyChange("number", oldValue, firstNumber);
-            } else { // if secondNumber doesn't contain a '.'
-                containsSeparator = false;
-                secondNumber = Double.parseDouble((int)secondNumber + "" + number);
-                this.propertyChangeSupport.firePropertyChange("number", oldValue, (int)firstNumber);
-            }
+        if (!operatorIsSelected) {
+            firstNumber = tempNum;
+        } else {
+            secondNumber = tempNum;
         }
     }
 
