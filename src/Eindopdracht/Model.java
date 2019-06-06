@@ -30,13 +30,14 @@ public class Model {
         this.propertyChangeSupport.addPropertyChangeListener(listener);
     }
 
-    public void setNumber(int number) {
+    public void setNumber(int number) { // store first and second number
         double tempNum;
-        if (!operatorIsSelected) {
+        if (!operatorIsSelected) { // assign value to temporary number
             tempNum = firstNumber;
         } else {
             tempNum = secondNumber;
         }
+        // if operator is selected, second number will be stored. Otherwise the first number
         double oldValue = tempNum;
             if (addSeparator) { // if setSeperator has been called
                 tempNum= Double.parseDouble((int)tempNum+ "." + number);
@@ -49,19 +50,19 @@ public class Model {
                 tempNum= Double.parseDouble((int)tempNum+ "" + number);
                 this.propertyChangeSupport.firePropertyChange("number", oldValue, (int)tempNum);
             }
-        if (!operatorIsSelected) {
+        if (!operatorIsSelected) { // give temporary value to first or second number
             firstNumber = tempNum;
         } else {
             secondNumber = tempNum;
         }
     }
 
-    public void setSeparator() { // set the decimal point, '.'
+    public void setSeparator() { // set the decimal point '.' and change values so setNumber knows decimal point is set
         containsSeparator = true;
         addSeparator = true;
     }
 
-    public void setOperator(char operator) { // set operator and adjust variables
+    public void setOperator(char operator) { // set operator and adjust variables so setNumber knows first number is set
         char oldValue = this.operator;
         this.operator = operator;
         this.propertyChangeSupport.firePropertyChange("operator", String.valueOf(oldValue), String.valueOf(this.operator));
