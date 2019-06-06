@@ -42,13 +42,14 @@ public class Controller extends VBox implements PropertyChangeListener {
         this.getChildren().add(fourthRow = new HBox());
     }
 
-    private void initNumberButtons() {
+    private void initNumberButtons() { // init number buttons
         HBox[] rows = {firstRow, secondRow, thirdRow, fourthRow};
         String[] numbers = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
         int index = 0;
-        for (int x = 0; x < 4; x++) {
-            for (int y = 0; y < 3; y++) {
-                if (index < 10) {
+        for (int x = 0; x < 4; x++) { // loop through rows
+            for (int y = 0; y < 3; y++) { // loop through numbers
+                if (index < 10) { // prevent indexOutOfBoundsExceptions
+                    // set name, dimensions and actionevent of number buttons
                     Button button = new Button(numbers[index]);
                     button.setPrefWidth(75);
                     button.setPrefHeight(75);
@@ -63,10 +64,10 @@ public class Controller extends VBox implements PropertyChangeListener {
         }
     }
 
-    private void initOperatorButtons() {
+    private void initOperatorButtons() { // init +, -, x and / buttons
         char[] operators = {'/', 'x', '-', '+'};
         HBox[] rows = {firstRow, secondRow, thirdRow, fourthRow};
-        for (int x = 0; x < 4; x++) {
+        for (int x = 0; x < 4; x++) { // set name, dimensions and actionevent
             Button button = new Button(String.valueOf(operators[x]));
             button.setPrefWidth(75);
             button.setPrefHeight(75);
@@ -76,13 +77,11 @@ public class Controller extends VBox implements PropertyChangeListener {
             );
             rows[x].getChildren().add(button);
         }
-
     }
 
-    private void initOtherButtons() {
-        char[] others = {'.', '='};
-        // '.' button
-        Button button = new Button(String.valueOf(others[0]));
+    private void initOtherButtons() { // init . and = buttons
+        // set name, dimensions and actionevent
+        Button button = new Button(String.valueOf('.'));
         button.setPrefWidth(75);
         button.setPrefHeight(75);
         button.setOnAction(event -> {
@@ -90,8 +89,8 @@ public class Controller extends VBox implements PropertyChangeListener {
         });
         fourthRow.getChildren().add(button);
 
-        // '=' button
-        button = new Button(String.valueOf(others[1]));
+        // set name, dimensions and actionevent of
+        button = new Button(String.valueOf('='));
         button.setPrefWidth(75);
         button.setPrefHeight(75);
         button.setOnAction(event -> {
