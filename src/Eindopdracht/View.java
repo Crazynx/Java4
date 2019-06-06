@@ -18,7 +18,7 @@ public class View extends HBox {
         initResultLabel();
     }
 
-    private void initResultLabel() {
+    private void initResultLabel() { // initialize result label
         resultLabel = new Label();
         resultLabel.setText("");
         resultLabel.setAlignment(Pos.CENTER);
@@ -30,7 +30,7 @@ public class View extends HBox {
         this.getChildren().add(resultLabel);
     }
 
-    public void setText(String text) {
+    public void setText(String text) { // set text to label
         resultLabel.setText(text);
     }
 
